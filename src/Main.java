@@ -81,6 +81,11 @@ public class Main {
                 break;
 
             case 7:
+                System.out.println("Entre le nombre : ");
+                num1 = scanner.nextInt();
+//                System.out.println("Entrer le deuxieme nombre :");
+//                num2 = scanner.nextInt();
+                System. out. println("factorial  is " + factorial (num1));
                 break;
         }
     }
@@ -132,6 +137,18 @@ public class Main {
 
         return result;
     }
+
+    static int  factorial (int num1) {
+
+        for ( int i = num1 - 1 ; i > 0 ; i--) {
+            num1 = num1 * i;
+        }
+
+        return num1;
+    }
+
+    //Math.sqrt
+
 }
 
 
