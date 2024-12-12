@@ -9,54 +9,69 @@ public class Main {
 
 
     static Scanner scanner = new Scanner(System.in);
-    static int num1,num2;
+    static int num1, num2;
 
     public static void main(String[] args) {
 
-        showMenu();
-        int choix = scanner.nextInt();
-        scanner.nextLine();
+        boolean close = true;
+//        do {
 
-        switch (choix) {
-            case 1:
-                insert();
-                System.out.println("Résultat de l'addition : " + addition(num1, num2));
-                break;
+            showMenu();
+            int choix = scanner.nextInt();
+            scanner.nextLine();
 
-            case 2:
-                insert();
-                System.out.println(" LA Resultat de soustraction : " + soustraction(num1,num2));
-                break;
+            switch (choix) {
+                case 1:
+                    insert();
+                    System.out.println("Résultat de l'addition : " + addition(num1, num2));
+                    break;
 
-            case 3:
-                insert();
-                System.out.println(" la resultat de multiplication : " + multiplication(num1,num2));
+                case 2:
+                    insert();
+                    System.out.println(" LA Resultat de soustraction : " + soustraction(num1, num2));
+                    break;
 
-                break;
+                case 3:
+                    insert();
+                    System.out.println(" la resultat de multiplication : " + multiplication(num1, num2));
 
-            case 4:
-                insert();
-                System.out.println(" la resultat de division : " + division(num1,num2));
-                break;
+                    break;
 
-            case 5:
-                insert();
-                System.out.println(" la resultat de puissance : " + puissance(num1,num2));
-                break;
+                case 4:
+                    insert();
+                    System.out.println(" la resultat de division : " + division(num1, num2));
+                    break;
 
-            case 6:
-                System.out.println("Entrer le nombre");
-                int num = scanner.nextInt();
-                System. out. println("Square root of " + num + " is " + sqrt (num));
+                case 5:
+                    insert();
+                    System.out.println(" la resultat de puissance : " + puissance(num1, num2));
+                    break;
 
-                break;
+                case 6:
+                    System.out.println("Entrer le nombre");
+                    int num = scanner.nextInt();
+                    System.out.println("Square root of " + num + " is " + sqrt(num));
 
-            case 7:
-                System.out.println("Entrer le nombre");
-                int nume = scanner.nextInt();
-                System. out. println("factorial  is " + factorial (nume));
-                break;
-        }
+                    break;
+
+                case 7:
+                    System.out.println("Entrer le nombre");
+                    int nume = scanner.nextInt();
+                    System.out.println("factorial  is " + factorial(nume));
+                    break;
+
+//                case 0:
+//                    close = false;
+//                    System.out.println("Programme terminé. Au revoir !");
+//                    break;
+//
+//                default:
+//                    System.out.println("Option invalide. Veuillez réessayer.");
+//
+//            }
+//
+//        } while (close);
+
     }
 
     static void showMenu () {
@@ -69,6 +84,7 @@ public class Main {
         System.out.println("Puissance => 5");
         System.out.println("Racine carrée => 6");
         System.out.println("Factorielle => 7");
+        System.out.println("Quitter  => 0");
         System.out.println("-------------------------");
         System.out.println("Choisir le nombre de MENU : ");
         System.out.println("-------------------------");
@@ -102,11 +118,17 @@ public class Main {
     }
 
 
-    static int  division (int num1 , int num2) {
-        int div = num1 / num2;
-        return div;
+    static double  division (double num1 , double num2) {
+        double div = num1 / num2;
+        if (num2 == 0) {
+            System.out.println("Operation non valide repeter operation ");
+            return Double.NaN;
+        }
+            return div;
 
     }
+
+
 
     static double  puissance (int base , int exponent) {
         double puis =  pow(base, exponent);
