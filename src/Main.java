@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
 
         boolean close = true;
-//        do {
+        do {
 
             showMenu();
             int choix = scanner.nextInt();
@@ -60,17 +60,17 @@ public class Main {
                     System.out.println("factorial  is " + factorial(nume));
                     break;
 
-//                case 0:
-//                    close = false;
-//                    System.out.println("Programme terminé. Au revoir !");
-//                    break;
-//
-//                default:
-//                    System.out.println("Option invalide. Veuillez réessayer.");
-//
-//            }
-//
-//        } while (close);
+                case 0:
+                    close = false;
+                    System.out.println("Programme terminé. Au revoir !");
+                    break;
+
+                default:
+                    System.out.println("Option invalide. Veuillez réessayer.");
+
+            }
+
+        } while (close);
 
     }
 
