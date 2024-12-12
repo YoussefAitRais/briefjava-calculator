@@ -38,9 +38,11 @@ public class Main {
                     break;
 
                 case 4:
+
                     insert();
                     System.out.println(" la resultat de division : " + division(num1, num2));
-                    break;
+
+                        break;
 
                 case 5:
                     insert();
@@ -92,12 +94,10 @@ public class Main {
 
     static void insert() {
 
-
         System.out.println("Entre le nombre : ");
         num1 = scanner.nextInt();
         System.out.println("Entrer le deuxieme nombre :");
         num2 = scanner.nextInt();
-
     }
 
     static int addition (int num1, int num2) {
@@ -112,20 +112,21 @@ public class Main {
     }
 
     static int  multiplication (int num1, int num2) {
-        int div = num1 * num2;
-        return div;
+        int multi = num1 * num2;
+        return multi;
 
     }
 
 
     static double  division (double num1 , double num2) {
-        double div = num1 / num2;
-        if (num2 == 0) {
-            System.out.println("Operation non valide repeter operation ");
-            return Double.NaN;
-        }
-            return div;
 
+
+        do {
+
+            System.out.println("Operation non valide repeter operation ");
+            num2 = scanner.nextDouble();
+        } while (num2 == 0);
+        return num1 / num2;
     }
 
 
