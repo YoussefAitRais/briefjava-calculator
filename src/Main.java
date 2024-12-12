@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
@@ -94,11 +95,19 @@ public class Main {
 
     static void insert() {
 
-        System.out.println("Entre le nombre : ");
-        num1 = scanner.nextInt();
-        System.out.println("Entrer le deuxieme nombre :");
-        num2 = scanner.nextInt();
+        try {
+            System.out.println("Entre le premier nombre : ");
+            num1 = scanner.nextInt();
+            System.out.println("Entrer le deuxieme nombre :");
+            num2 = scanner.nextInt();
+        } catch ( InputMismatchException e) {
+            System.out.println("Veuillez Ressayer Entrer Des Nombres");
+            scanner.nextLine();
+            insert();
+        }
+
     }
+
 
     static int addition (int num1, int num2) {
         int sum = num1 + num2;
